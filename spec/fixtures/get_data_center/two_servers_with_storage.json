@@ -1,0 +1,147 @@
+{
+  "get_data_center_response": {
+    "@xmlns:ns2": "http://ws.api.profitbricks.com/",
+    "return": {
+      "data_center_id": "b3eebede-5c78-417c-b1bc-ff5de01a0602",
+      "data_center_name": "Test",
+      "data_center_version": "9",
+      "provisioning_state": "AVAILABLE",
+      "servers": [
+        {
+          "connected_storages": {
+            "bus_type": "VIRTIO",
+            "device_number": "1",
+            "size": "5",
+            "storage_id": "b6fdfa5b-fadf-5621-1be3-0882822abb88",
+            "storage_name": "Debian"
+          },
+          "cores": "1",
+          "creation_time": "2012-03-03T23:28:44+01:00",
+          "data_center_id": "b3eebede-5c78-417c-b1bc-ff5de01a0602",
+          "data_center_version": "9",
+          "internet_access": false,
+          "ips": "10.7.232.12",
+          "last_modification_time": "2012-03-03T23:28:44+01:00",
+          "nics": {
+            "data_center_id": "b3eebede-5c78-417c-b1bc-ff5de01a0602",
+            "data_center_version": "9",
+            "firewall": {
+              "active": false,
+              "firewall_id": "374da20a-e7a4-151a-0be8-04c5b82409a0",
+              "nic_id": "8c5758c1-29b7-8a23-ffc8-4c54dac405c2",
+              "provisioning_state": "AVAILABLE"
+            },
+            "internet_access": false,
+            "ips": "10.7.232.12",
+            "lan_id": "1",
+            "mac_address": "02:01:eb:58:b1:63",
+            "nic_id": "8c5758c1-29b7-8a23-ffc8-4c54dac405c2",
+            "nic_name": "eth0",
+            "server_id": "7e132ddb-b2c8-a109-7f99-7b4a32955006"
+          },
+          "os_type": "OTHER",
+          "provisioning_state": "AVAILABLE",
+          "ram": "256",
+          "server_id": "7e132ddb-b2c8-a109-7f99-7b4a32955006",
+          "server_name": "Test Server 2",
+          "virtual_machine_state": "RUNNING"
+        },
+        {
+          "connected_storages": {
+            "bus_type": "VIRTIO",
+            "device_number": "1",
+            "size": "1",
+            "storage_id": "68f1badb-edbf-bb49-00cd-b5481ac91f7f",
+            "storage_name": "Empty"
+          },
+          "cores": "1",
+          "creation_time": "2012-03-02T15:40:24+01:00",
+          "data_center_id": "b3eebede-5c78-417c-b1bc-ff5de01a0602",
+          "data_center_version": "9",
+          "internet_access": true,
+          "ips": [
+            "10.7.232.11",
+            "46.16.73.186"
+          ],
+          "last_modification_time": "2012-03-02T15:57:31+01:00",
+          "nics": [
+            {
+              "data_center_id": "b3eebede-5c78-417c-b1bc-ff5de01a0602",
+              "data_center_version": "9",
+              "firewall": {
+                "active": false,
+                "firewall_id": "dac45569-b53a-c270-20c8-aa69aa071d28",
+                "nic_id": "30790131-39f1-dd1c-c457-3e8ed77e74f6",
+                "provisioning_state": "AVAILABLE"
+              },
+              "internet_access": true,
+              "ips": "46.16.73.186",
+              "lan_id": "2",
+              "mac_address": "02:01:17:75:f9:cb",
+              "nic_id": "30790131-39f1-dd1c-c457-3e8ed77e74f6",
+              "nic_name": "eth0",
+              "server_id": "51d54771-7566-4d9d-a560-1f2a3b61a4d5"
+            },
+            {
+              "data_center_id": "b3eebede-5c78-417c-b1bc-ff5de01a0602",
+              "data_center_version": "9",
+              "firewall": {
+                "active": false,
+                "firewall_id": "3ccc6dd6-ddac-42e7-fb00-13f1853ee466",
+                "nic_id": "7c2cec85-435e-ddee-9a1c-ff88659ff9be",
+                "provisioning_state": "AVAILABLE"
+              },
+              "internet_access": false,
+              "ips": "10.7.232.11",
+              "lan_id": "1",
+              "mac_address": "02:01:8c:9c:50:3f",
+              "nic_id": "7c2cec85-435e-ddee-9a1c-ff88659ff9be",
+              "nic_name": "eth1",
+              "server_id": "51d54771-7566-4d9d-a560-1f2a3b61a4d5"
+            }
+          ],
+          "os_type": "UNKNOWN",
+          "provisioning_state": "AVAILABLE",
+          "ram": "256",
+          "rom_drives": {
+            "image_id": "9de62e6e-ff1c-11e0-a1a7-0025901dfe2a",
+            "image_name": "grml64_2011.05.iso"
+          },
+          "server_id": "51d54771-7566-4d9d-a560-1f2a3b61a4d5",
+          "server_name": "Test Server",
+          "virtual_machine_state": "RUNNING"
+        }
+      ],
+      "storages": [
+        {
+          "creation_time": "2012-03-03T23:28:44+01:00",
+          "data_center_id": "b3eebede-5c78-417c-b1bc-ff5de01a0602",
+          "data_center_version": "9",
+          "last_modification_time": "2012-03-03T23:28:44+01:00",
+          "os_type": "UNKNOWN",
+          "provisioning_state": "AVAILABLE",
+          "server_ids": "51d54771-7566-4d9d-a560-1f2a3b61a4d5",
+          "size": "1",
+          "storage_id": "68f1badb-edbf-bb49-00cd-b5481ac91f7f",
+          "storage_name": "Empty"
+        },
+        {
+          "creation_time": "2012-03-03T23:28:44+01:00",
+          "data_center_id": "b3eebede-5c78-417c-b1bc-ff5de01a0602",
+          "data_center_version": "9",
+          "last_modification_time": "2012-03-03T23:28:44+01:00",
+          "mount_image": {
+            "image_id": "d1d8747f-fa56-11e0-a1a7-0025901dfe2a",
+            "image_name": "profitbricks-debian-squeeze-EN-6.0.1a-amd64.img"
+          },
+          "os_type": "UNKNOWN",
+          "provisioning_state": "AVAILABLE",
+          "server_ids": "7e132ddb-b2c8-a109-7f99-7b4a32955006",
+          "size": "5",
+          "storage_id": "b6fdfa5b-fadf-5621-1be3-0882822abb88",
+          "storage_name": "Debian"
+        }
+      ]
+    }
+  }
+}

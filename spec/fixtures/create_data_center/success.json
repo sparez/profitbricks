@@ -1,0 +1,10 @@
+{
+    "create_data_center_response": {
+        "@xmlns:ns2": "http://ws.api.profitbricks.com/",
+        "return": {
+            "data_center_id": "a897fbd7-9f24-4eed-bd56-cadae6117755",
+            "data_center_version": "1",
+            "request_id": "1182"
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "delete_data_center_response": {
+        "@xmlns:ns2": "http://ws.api.profitbricks.com/",
+        "return": {
+            "request_id": "1183"
+        }
+    }
+}
