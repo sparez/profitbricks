@@ -1,0 +1,15 @@
+{
+    "get_image_response": {
+        "@xmlns:ns2": "http://ws.api.profitbricks.com/",
+        "return": {
+            "cpu_hotpluggable": false,
+            "image_id": "5f58656e-66c3-11e1-8c6f-0025901dfe2a",
+            "image_name": "Windows8-ConsumerPreview-64bit-English.iso",
+            "image_size": "6",
+            "image_type": "CDROM",
+            "memory_hotpluggable": false,
+            "os_type": "UNKNOWN",
+            "writeable": true
+        }
+    }
+}

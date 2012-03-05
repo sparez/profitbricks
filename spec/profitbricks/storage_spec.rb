@@ -4,6 +4,9 @@ describe Profitbricks::Storage do
   include Savon::Spec::Macros
 
   let(:client) do
+    Savon.configure do |config|
+      config.log = false 
+    end
     Savon::Client.new do
         wsdl.endpoint = "https://api.profitbricks.com/1.1"
         wsdl.document = "https://api.profitbricks.com/1.1/wsdl"

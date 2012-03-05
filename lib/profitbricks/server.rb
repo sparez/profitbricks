@@ -32,7 +32,6 @@ module Profitbricks
       xml = "<arg0><serverId>#{self.id}</serverId>"
       xml += get_xml_and_update_attributes options, [:cores, :ram, :name, :boot_from_storage_id, :boot_from_image_id, :os_type]
       xml += "</arg0>"
-      pp xml
       response = Profitbricks.request :update_server, xml
       return true if response.to_hash[:update_server_response][:return]
     end
@@ -67,7 +66,7 @@ module Profitbricks
       # Finds a virtual server
       #
       # @param [Hash] options currently just :id is supported
-      # @option options [String] The id of the server to locate
+      # @option options [String] :id The id of the server to locate
       def find(options = {})
         # FIXME
         #if options[:name]

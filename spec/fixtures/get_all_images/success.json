@@ -1,0 +1,100 @@
+{
+    "get_all_images_response": {
+        "@xmlns:ns2": "http://ws.api.profitbricks.com/",
+        "return": [
+            {
+                "cpu_hotpluggable": false,
+                "image_id": "5f58656e-66c3-11e1-8c6f-0025901dfe2a",
+                "image_name": "Windows8-ConsumerPreview-64bit-English.iso",
+                "image_size": "6",
+                "image_type": "CDROM",
+                "memory_hotpluggable": false,
+                "os_type": "UNKNOWN",
+                "writeable": true
+            },
+            {
+                "cpu_hotpluggable": false,
+                "image_id": "9de62e6e-ff1c-11e0-a1a7-0025901dfe2a",
+                "image_name": "grml64_2011.05.iso",
+                "image_size": "698",
+                "image_type": "CDROM",
+                "memory_hotpluggable": false,
+                "os_type": "OTHER",
+                "server_ids": [
+                    "cab5b774-b33d-2027-eae1-85d58adeb5e8",
+                    "b09cc7b2-fcc7-16de-88c7-0ddd7c5aefff",
+                    "ccbc8485-35cd-2d62-016a-a1f74557b379",
+                    "6a9160c9-c1f6-5464-d894-720b9c75e369",
+                    "c9c01a18-d7c1-6c4c-4cbc-f8711cf52b20",
+                    "805eae83-595f-925d-8621-d4cbd1f4686a",
+                    "1180df13-b753-4ed1-5b40-37ee02c1a9b4",
+                    "997d954e-6c64-4255-a9a6-345b01956959",
+                    "c7a9af7d-7626-7b44-4e96-21d03ca424bd",
+                    "f04b39f4-afcf-b3b3-dc63-21c4b7c96648",
+                    "1f924812-3e58-2085-a861-42c5fb7f0cce",
+                    "7b77d8dc-f7e1-b59d-5939-0ed48749954e",
+                    "4dfc0b6b-9f47-1d8f-43c5-0b8588300715"
+                ],
+                "writeable": true
+            },
+            {
+                "cpu_hotpluggable": false,
+                "image_id": "3fbd84d1-226d-11e1-a5a8-0025901e3c62",
+                "image_name": "WinPE-VirtIO-Driver.iso",
+                "image_size": "247",
+                "image_type": "CDROM",
+                "memory_hotpluggable": false,
+                "os_type": "WINDOWS",
+                "server_ids": [
+                    "cb12122a-c52b-62e4-44c4-dae11e26cb93",
+                    "eb1bac3c-e93b-3a5b-a2e4-306fa96a37cc",
+                    "1f5fe5fc-6941-4829-9a0e-c3954aa86d22",
+                    "6cbe83ff-b504-601b-1008-d88b15108116",
+                    "e4a997b4-4f6f-6dff-7eef-aa93a0f1f42a",
+                    "b61c8de3-f636-727d-7d11-2f7eb1dd7098"
+                ],
+                "writeable": true
+            },
+            {
+                "cpu_hotpluggable": false,
+                "image_id": "d09207ec-2be2-11e1-9cf2-0025901dfe2a",
+                "image_name": "PB-Win2012-Preview-EN-RDP.img",
+                "image_size": "13312",
+                "image_type": "HDD",
+                "memory_hotpluggable": false,
+                "os_type": "WINDOWS",
+                "writeable": true
+            },
+            {
+                "cpu_hotpluggable": false,
+                "image_id": "d1d8747f-fa56-11e0-a1a7-0025901dfe2a",
+                "image_name": "profitbricks-debian-squeeze-EN-6.0.1a-amd64.img",
+                "image_size": "1024",
+                "image_type": "HDD",
+                "memory_hotpluggable": false,
+                "os_type": "OTHER",
+                "writeable": true
+            },
+            {
+                "cpu_hotpluggable": false,
+                "image_id": "1cf5f820-58cc-11e1-9e36-0025901dfe2a",
+                "image_name": "PB-Win-2008-R2-DE-RDP-2.12.img",
+                "image_size": "9216",
+                "image_type": "HDD",
+                "memory_hotpluggable": false,
+                "os_type": "WINDOWS",
+                "writeable": true
+            },
+            {
+                "cpu_hotpluggable": false,
+                "image_id": "5256ccd8-58c4-11e1-9e36-0025901dfe2a",
+                "image_name": "PB-Win-2008-R2-EN-RDP-2.12.img",
+                "image_size": "8704",
+                "image_type": "HDD",
+                "memory_hotpluggable": false,
+                "os_type": "WINDOWS",
+                "writeable": true
+            }
+        ]
+    }
+}

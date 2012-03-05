@@ -4,6 +4,9 @@ describe Profitbricks::DataCenter do
   include Savon::Spec::Macros
 
   let(:client) do
+    Savon.configure do |config|
+      config.log = false 
+    end
     Savon::Client.new do
         wsdl.endpoint = "https://api.profitbricks.com/1.1"
         wsdl.document = "https://api.profitbricks.com/1.1/wsdl"
@@ -39,7 +42,6 @@ describe Profitbricks::DataCenter do
 
     dc.servers.count.should == 2
     dc.servers.first.class.should == Server
-    pp dc.servers
   end
 
   it "should update its provisioning_state" do

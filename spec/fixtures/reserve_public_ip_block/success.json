@@ -1,0 +1,13 @@
+{
+    "reserve_public_ip_block_response": {
+        "@xmlns:ns2": "http://ws.api.profitbricks.com/",
+        "return": {
+            "block_id": "167bc48c-4f80-4870-b5db-13d7d762e1cd",
+            "ips": [
+                "46.16.74.12",
+                "46.16.74.13"
+            ],
+            "request_id": "1426"
+        }
+    }
+}

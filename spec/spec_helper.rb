@@ -12,6 +12,10 @@ if ENV['COVERAGE']
   SimpleCov.start
 end
 
+Savon.configure do |config|
+  config.log = false
+end
+
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true
@@ -19,9 +23,6 @@ RSpec.configure do |config|
   config.include Savon::Spec::Macros
 end
 
-Savon.configure do |config|
-  config.log = false
-end
 
 Savon::Spec::Fixture.path = File.expand_path("../fixtures", __FILE__)
 
