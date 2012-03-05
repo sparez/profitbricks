@@ -3,7 +3,7 @@ module Profitbricks
     has_many :servers
 
     # Deletes an empty Virtual Data Center. All components must be removed first.
-    # @return [true] true success, false otherwise
+    # @return [Boolean] true on success, false otherwise
     def delete
       response = Profitbricks.request :delete_data_center, "<dataCenterId>#{self.id}</dataCenterId>"
       response.to_hash[:delete_data_center_response][:return] ? true : false
