@@ -1,6 +1,7 @@
 module Profitbricks
   class DataCenter < Profitbricks::Model
     has_many :servers
+    has_many :storages
 
     # Deletes an empty Virtual Data Center. All components must be removed first.
     # @return [Boolean] true on success, false otherwise

@@ -4,6 +4,9 @@ module Profitbricks
     def initialize(username, password, &block)
       @username = username
       @password = password
+      Savon.configure do |config|
+        config.raise_errors = false 
+      end
       @client = Savon::Client.new do |wsdl, http|
         wsdl.endpoint = "https://api.profitbricks.com/1.1"
         wsdl.document = "https://api.profitbricks.com/1.1/wsdl"

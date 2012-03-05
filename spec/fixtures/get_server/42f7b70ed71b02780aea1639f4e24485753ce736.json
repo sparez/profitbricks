@@ -1,1 +1,0 @@
-{"get_server_response":{"return":{"data_center_id":"b3eebede-5c78-417c-b1bc-ff5de01a0602","data_center_version":"15","server_id":"4cb6550f-3777-4818-8f4c-51233162a980","server_name":"Test Server","cores":"1","ram":"256","internet_access":false,"provisioning_state":"INACTIVE","virtual_machine_state":"NOSTATE","os_type":"UNKNOWN"},"@xmlns:ns2":"http://ws.api.profitbricks.com/"}}

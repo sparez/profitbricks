@@ -1,0 +1,16 @@
+{
+    "fault": {
+        "@xmlns:ns4": "http://www.w3.org/2003/05/soap-envelope",
+        "detail": {
+            "profitbricks_service_fault": {
+                "@xmlns:ns2": "http://ws.api.profitbricks.com/",
+                "fault_code": "BAD_REQUEST",
+                "http_code": "400",
+                "message": "The following mandatory parameters are null: storageId",
+                "request_id": "1252"
+            }
+        },
+        "faultcode": "S:Server",
+        "faultstring": "The following mandatory parameters are null: storageId"
+    }
+}

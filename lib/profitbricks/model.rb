@@ -28,21 +28,29 @@ module Profitbricks
     end
 
     def get_xml_and_update_attributes(hash, attributes=nil)
-      xml = ''
       attributes = hash.keys if attributes.nil?
       attributes.each do |a|
-        if hash[a]
-          initialize_getter a, hash[a]
-          xml += "<#{a.to_s.lower_camelcase}>#{hash[a]}</#{a.to_s.lower_camelcase}>"
-        end
+        initialize_getter(a, hash[a]) if hash[a]
       end
-      xml
+      hash, attributes = self.class.expand_attributes(hash, attributes, self.class)
+      xml = self.class.build_xml(hash, attributes)
+    end
+
+    def self.get_xml_and_update_attributes(hash, attributes=[])
+      hash, attributes = expand_attributes(hash, attributes, name())
+      self.build_xml(hash, attributes)
     end
 
     private
     def type_cast(value)
       return value.to_i if value =~ /^\d+$/
       value
+    end
+
+    def self.build_xml(hash ,attributes)
+      attributes.collect do |a|
+        "<#{a.to_s.lower_camelcase}>#{hash[a]}</#{a.to_s.lower_camelcase}>" if hash[a]
+      end.join('')
     end
 
     def initialize_getter name, value=nil
@@ -69,6 +77,14 @@ module Profitbricks
 
     def initialize_belongs_to_association name, association, value
       self.instance_variable_set("@#{name}", association[:class].send(:new, value))
+    end
+
+    def self.expand_attributes(hash, attributes, klass=nil)
+      name =  hash.delete(:name)
+      hash["#{klass.to_s.underscore}_name"] = name
+      attributes.delete(:name)
+      attributes.push "#{klass.to_s.underscore}_name"
+      return hash, attributes
     end
 	end
 end

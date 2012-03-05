@@ -1,0 +1,16 @@
+{
+    "fault": {
+        "@xmlns:ns4": "http://www.w3.org/2003/05/soap-envelope",
+        "detail": {
+            "profitbricks_service_fault": {
+                "@xmlns:ns2": "http://ws.api.profitbricks.com/",
+                "fault_code": "PROVISIONING_NO_CHANGES",
+                "http_code": "409",
+                "message": "Nothing changes. The new provisioning request does not differ from the current active one. The storage is not mounted to the server. So no needs to unmount it",
+                "request_id": "1216"
+            }
+        },
+        "faultcode": "S:Server",
+        "faultstring": "Nothing changes. The new provisioning request does not differ from the current active one. The storage is not mounted to the server. So no needs to unmount it"
+    }
+}

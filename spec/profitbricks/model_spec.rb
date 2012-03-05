@@ -52,12 +52,17 @@ describe Profitbricks::Model do
       end
     }.should raise_error(LoadError)
   end
-
-  it "should execute update_attributes correclty" do
-    mt = Profitbricks::ModelTest.new({:name => 'Test', :camel_case => 'works'})
-    xml = mt.get_xml_and_update_attributes({:name => 'Test2', :camel_case => 'fails?'}, [:name, :camel_case])
-    xml.should == "<name>Test2</name><camelCase>fails?</camelCase>"
-    mt.name.should == 'Test2'
-    mt.camel_case.should == 'fails?'
+  describe "get_xml_and_update_attributes" do
+    it "should execute update_attributes correclty" do
+      mt = Profitbricks::ModelTest.new({:name => 'Test', :camel_case => 'works'})
+      xml = mt.get_xml_and_update_attributes({:name => 'Test2', :camel_case => 'fails?'}, [:name, :camel_case])
+      xml.should == "<camelCase>fails?</camelCase><modelTestName>Test2</modelTestName>"
+      mt.name.should == 'Test2'
+      mt.camel_case.should == 'fails?'
+    end
+    it "should work as class method" do
+      xml = Profitbricks::ModelTest.get_xml_and_update_attributes({:name => 'Test2', :camel_case => 'fails?'}, [:name, :camel_case])
+      xml.should == "<camelCase>fails?</camelCase><modelTestName>Test2</modelTestName>"
+    end
   end
 end

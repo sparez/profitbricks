@@ -1,0 +1,10 @@
+{
+    "delete_storage_response": {
+        "@xmlns:ns2": "http://ws.api.profitbricks.com/",
+        "return": {
+            "data_center_id": "b3eebede-5c78-417c-b1bc-ff5de01a0602",
+            "data_center_version": "38",
+            "request_id": "1265"
+        }
+    }
+}

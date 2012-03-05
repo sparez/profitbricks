@@ -14,15 +14,15 @@ module Profitbricks
   end
 
   def self.request(method, body=nil)
-    begin
-      resp = Profitbricks.client.request method do
-        soap.body = body if body
-      end
-      self.store(method, body, resp.to_xml, resp.to_hash) if self.debug
-      resp
-    rescue Savon::SOAP::Fault => fault
-      raise fault
+    resp = Profitbricks.client.request method do
+      soap.body = body if body
     end
+    self.store(method, body, resp.to_xml, resp.to_hash) if self.debug
+    if resp.soap_fault?
+      puts "Could not complete request (#{method}): #{resp.soap_fault.message}"
+      raise RuntimeError.new("Could not complete request (#{method}): #{resp.soap_fault.message}")
+    end
+    resp
   end
 
   def self.store(method, body, xml, json)
