@@ -30,31 +30,9 @@ module Profitbricks
       raise ArgumentError.new(":ram has to be at least 256MiB and a multiple of it") if options[:ram] < 256 or (options[:ram] % 256) > 0
       raise ArgumentError.new(":os_type has to be either 'WINDOWS' or 'OTHER'") if options[:os_type] and !['WINDOWS', 'OTHER'].include? options[:os_type]
       xml = "<arg0><serverId>#{self.id}</serverId>"
-      if options[:cores]
-        xml += "   <cores>#{options[:cores]}</cores>" 
-        @cores = options[:cores]
-      end
-      if options[:ram]
-        xml += "   <ram>#{options[:ram]}</ram>"
-        @ram = options[:ram]
-      end
-      if options[:name]
-        xml += "   <serverName>#{options[:name]}</serverName>"
-        @name = options[:name]
-      end
-      if options[:boot_from_storage_id]
-        xml += "   <bootFromStorageId>#{options[:boot_from_storage_id]}</bootFromStorageId>" 
-        @boot_from_storage_id = options[:boot_from_storage_id]
-      end
-      if options[:boot_from_image_id]
-        xml += "   <bootFromImageId>#{options[:boot_from_image_id]}</bootFromImageId>"
-        @boot_from_image_id = options[:boot_from_image_id]
-      end
-      if options[:os_type]
-        xml += "   <osType>#{options[:os_type]}</osType>"
-        @os_type = options[:os_type]
-      end
+      xml += get_xml_and_update_attributes options, [:cores, :ram, :name, :boot_from_storage_id, :boot_from_image_id, :os_type]
       xml += "</arg0>"
+      pp xml
       response = Profitbricks.request :update_server, xml
       return true if response.to_hash[:update_server_response][:return]
     end

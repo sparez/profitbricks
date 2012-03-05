@@ -52,4 +52,12 @@ describe Profitbricks::Model do
       end
     }.should raise_error(LoadError)
   end
+
+  it "should execute update_attributes correclty" do
+    mt = Profitbricks::ModelTest.new({:name => 'Test', :camel_case => 'works'})
+    xml = mt.get_xml_and_update_attributes({:name => 'Test2', :camel_case => 'fails?'}, [:name, :camel_case])
+    xml.should == "<name>Test2</name><camelCase>fails?</camelCase>"
+    mt.name.should == 'Test2'
+    mt.camel_case.should == 'fails?'
+  end
 end

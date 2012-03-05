@@ -27,17 +27,29 @@ module Profitbricks
       define_method(model) { instance_variable_get("@#{model}") }
     end
 
+    def get_xml_and_update_attributes(hash, attributes=nil)
+      xml = ''
+      attributes = hash.keys if attributes.nil?
+      attributes.each do |a|
+        if hash[a]
+          initialize_getter a, hash[a]
+          xml += "<#{a.to_s.lower_camelcase}>#{hash[a]}</#{a.to_s.lower_camelcase}>"
+        end
+      end
+      xml
+    end
+
     private
     def type_cast(value)
       return value.to_i if value =~ /^\d+$/
       value
     end
 
-    def initialize_getter name, value
+    def initialize_getter name, value=nil
       self.class.send :define_method, name do 
         instance_variable_get("@#{name}")
       end
-      self.instance_variable_set("@#{name}", value)
+      self.instance_variable_set("@#{name}", value) if value
     end
 
     def initialize_association name, association, value
@@ -58,6 +70,5 @@ module Profitbricks
     def initialize_belongs_to_association name, association, value
       self.instance_variable_set("@#{name}", association[:class].send(:new, value))
     end
-
 	end
 end

@@ -1,17 +1,5 @@
 module Profitbricks
-  class Image
-    attr_reader :cpu_hotpluggable, :id, :name, :size, :type, :memory_hotpluggable, :os, :writeable, :servers
-    def initialize(hash)
-      @cpu_hotpluggable    = hash[:cpu_hotpluggable]
-      @id                  = hash[:image_id]
-      @name                = hash[:image_name]
-      @size                = hash[:image_size]
-      @type                = hash[:image_type]
-      @memory_hotpluggable = hash[:memory_hotpluggable]
-      @os                  = hash[:os_type]
-      @writeable           = hash[:writeable]
-      @servers             = hash[:server_ids]
-    end
+  class Image < Profitbricks::Model
 
     def update
       self.attributes = Image.find(self.id).attributes
