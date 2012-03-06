@@ -1,23 +1,20 @@
-Profitbricks
-==============
+# Profitbricks
 
+## DESCRIPTION
 A Ruby client for the ProfitBricks API.
 
 BE AWARE: This software is in a very early state of development, the methods and responses will very likely change over time.
 
-Requirements
------------------
+## Dependencies
 A Ruby interpreter.
 Currently only tested on MRI 1.9.3, more implementations will follow once the tests pass on TravisCI
 
 
-Installation
------------------
+## Installation
 	gem install profitbricks
 
 
-Synopsis
------------------
+## Synopsis
 	require 'profitbricks'
 	Profitbricks.configure do |config|
 		username = "username"
@@ -46,8 +43,7 @@ or
 
 Check out the examples directory for more detailed usage information.
 
-License
------------------
+## License
 This might also change!
 
 (The MIT License)

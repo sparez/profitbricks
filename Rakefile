@@ -9,16 +9,18 @@ require "rspec/core/rake_task"
 # Hoe.plugin :inline
 # Hoe.plugin :racc
 # Hoe.plugin :rubyforge
+Hoe.plugin :git
+Hoe.plugin :gemspec
+Hoe.plugin :bundler
 
 Hoe.spec 'profitbricks' do
-  # HEY! If you fill these out in ~/.hoe_template/Rakefile.erb then
-  # you'll never have to touch them again!
-  # (delete this comment too, of course)
-
   developer('Dominik Sander', 'git@dsander.de')
 
-  # self.rubyforge_name = 'profitbricksx' # if different than 'profitbricks'
+  self.readme_file = 'README.md'
+  self.history_file = 'CHANGELOG.md'
 end
+
+task :prerelease => [:clobber, :check_manifest, :test]
 
 RSpec::Core::RakeTask.new
 
