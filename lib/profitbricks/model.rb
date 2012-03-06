@@ -20,13 +20,6 @@ module Profitbricks
       update_attributes(updated)
     end
 
-    def update_attributes(updated)
-      self.instance_variables.each do |var|
-        self.instance_variable_set(var, updated.instance_variable_get(var))
-      end
-      true
-    end
-
     def self.has_many(model)
       klass = Profitbricks.get_class model[0..-2].camelcase
       @@associations[model] = {:type => :collection, :class => klass}
@@ -54,6 +47,13 @@ module Profitbricks
     end
 
     private
+    def update_attributes(updated)
+      self.instance_variables.each do |var|
+        self.instance_variable_set(var, updated.instance_variable_get(var))
+      end
+      true
+    end
+
     def type_cast(value)
       return value.to_i if value =~ /^\d+$/
       value
