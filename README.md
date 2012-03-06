@@ -16,15 +16,13 @@ Installation
 	gem install profitbricks
 
 
-Wish
------------------
-Currently the Profitbricks API only supports HTTP basic auth using your main login and password. To be able to create services on top of Profitbricks IaaS we need fine grained access levels which do not expose your login details.
-
-
 Synopsis
 -----------------
 	require 'profitbricks'
-	Profitbricks::Client.new("username", "password") 
+	Profitbricks.configure do |config|
+		username = "username"
+		password = "password"
+	end
 
 Get a list of all your Datacenters
 
@@ -46,6 +44,7 @@ or
 
 	Server.create(:cores => 1, :ram => 256, :name => 'Test Server')
 
+Check out the examples directory for more detailed usage information.
 
 License
 -----------------
