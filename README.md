@@ -1,5 +1,6 @@
 # Profitbricks
- * https://github.com/dsander/profitbricks
+
+* http://github.com/dsander/profitbricks
 
 ## DESCRIPTION
 A Ruby client for the ProfitBricks API.
