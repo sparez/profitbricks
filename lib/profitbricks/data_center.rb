@@ -48,9 +48,16 @@ module Profitbricks
     # Creates a Server in the current Virtual Data Center, automatically sets the :data_center_id
     # @see Profitbricks::Server#create
     def create_server(options)
-      s = Server.create(options.merge(:data_center_id => self.id))
-      @servers << s
-      s
+      Server.create(options.merge(:data_center_id => self.id))
+    end
+
+    def wait_for_provisioning
+      self.update_state
+      while @provisioning_state != 'AVAILABLE'
+        self.update_state
+        sleep 1
+      end
+      self.reload
     end
 
     class << self
@@ -60,8 +67,8 @@ module Profitbricks
       def all
         resp = Profitbricks.request :get_all_data_centers
         datacenters = resp.to_hash[:get_all_data_centers_response][:return]
-        [datacenters].flatten.collect do |dc|
-          PB::DataCenter.new(dc)
+        [datacenters].flatten.compact.collect do |dc|
+          PB::DataCenter.find(:id => PB::DataCenter.new(dc).id)
         end
       end
       
@@ -71,7 +78,7 @@ module Profitbricks
       # @return [DataCenter] The newly created Virtual Data Center
       def create(name)
         response = Profitbricks.request :create_data_center, "<dataCenterName>#{name}</dataCenterName>"
-        PB::DataCenter.new(response.to_hash[:create_data_center_response][:return].merge(:data_center_name => name))
+        self.find(:id => response.to_hash[:create_data_center_response][:return][:data_center_id] )
       end
 
       # Finds a Virtual Data Center

@@ -27,3 +27,19 @@ end
 Savon::Spec::Fixture.path = File.expand_path("../fixtures", __FILE__)
 
 require 'profitbricks'
+
+Savon.configure do |config|
+  config.log = false 
+  config.log_level = :error
+end
+HTTPI.log = false
+client = Savon::Client.new do
+  wsdl.endpoint = "https://api.profitbricks.com/1.1"
+  wsdl.document = "https://api.profitbricks.com/1.1/wsdl"
+end
+
+Profitbricks.configure do |config|
+  config.username = "none"
+  config.password = "none"
+end
+Profitbricks.client = client

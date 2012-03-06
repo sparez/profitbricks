@@ -3,21 +3,6 @@ require 'spec_helper'
 describe Profitbricks::Storage do
   include Savon::Spec::Macros
 
-  let(:client) do
-    Savon.configure do |config|
-      config.log = false 
-    end
-    Savon::Client.new do
-        wsdl.endpoint = "https://api.profitbricks.com/1.1"
-        wsdl.document = "https://api.profitbricks.com/1.1/wsdl"
-    end
-  end
-
-  before do
-    Profitbricks::Client.new("nouser", "nopass") 
-    Profitbricks.client = client
-  end
-
   it "should create a new server with minimal arguments" do
     savon.expects(:create_storage).with("<arg0><dataCenterId>b3eebede-5c78-417c-b1bc-ff5de01a0602</dataCenterId><size>5</size><storageName>Test Storage</storageName></arg0>").returns(:success)
     savon.expects(:get_storage).with('<storageId>f55952bc-da27-4e29-af89-ed212ea28e11</storageId>').returns(:success)

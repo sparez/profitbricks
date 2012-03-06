@@ -21,13 +21,16 @@ module Profitbricks
       # @option options [String] :id The id of the Image
       # @return [Image] The found Image Object 
       def find(options = {})
+        image = nil
         if options[:name]
-          dc = PB::Image.all().select { |d| d.name == options[:name] }.first
-          options[:id] = dc.id if dc
+          image = PB::Image.all().select { |d| d.name == options[:name] }.first
+          options[:id] = image.id if image
         end
         raise "Unable to locate the image named '#{options[:name]}'" unless options[:id]
-        response = Profitbricks.request :get_image, "<imageId>#{options[:id]}</imageId>"
-        PB::Image.new(response.to_hash[:get_image_response][:return])
+        image
+        # This does not work for public images
+        #response = Profitbricks.request :get_image, "<imageId>#{options[:id]}</imageId>"
+        #PB::Image.new(response.to_hash[:get_image_response][:return])
       end
       
       # Outputs a list of all HDD and/or CD-ROM/DVD images existing on or uploaded to the Profit-Bricks FTP server. 
@@ -35,7 +38,6 @@ module Profitbricks
       # @return [Array<Image>] List of all available Images
       def all
         resp = Profitbricks.request :get_all_images
-        puts resp.to_xml
         resp.to_hash[:get_all_images_response][:return].collect do |dc|
           PB::Image.new(dc)
         end

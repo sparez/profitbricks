@@ -1,33 +1,65 @@
 module Profitbricks
   VERSION = '0.0.1'
+
   def self.client=(client)
     @client = client
   end
-  def self.client 
+
+  def self.client
     @client
   end
-  def self.debug=(debug)
-    @debug = debug
-  end
-  def self.debug 
-    @debug
+
+  def self.configure(&block)
+    Profitbricks::Config.store_requests = false
+    Profitbricks::Config.log = false
+    Profitbricks::Config.global_classes = true
+    yield Profitbricks::Config
+
+    Savon.configure do |config|
+      config.raise_errors = false 
+      config.log = Profitbricks::Config.log
+    end
+    HTTPI.log = false
+
+    @client = Savon::Client.new do |wsdl, http|
+      wsdl.endpoint = "https://api.profitbricks.com/1.1"
+      wsdl.document = "https://api.profitbricks.com/1.1/wsdl"
+      http.auth.basic Profitbricks::Config.username, Profitbricks::Config.password
+    end
+
+    Profitbricks.client = @client
+    if Profitbricks::Config.global_classes
+      Profitbricks.constants.select {|c| Class === Profitbricks.const_get(c)}.each do |klass|
+        next if klass == :Config
+        unless Kernel.const_defined?(klass)
+          Kernel.const_set(klass, Profitbricks.const_get(klass))
+        end
+      end
+    end
   end
 
   def self.request(method, body=nil)
     resp = Profitbricks.client.request method do
       soap.body = body if body
     end
-    self.store(method, body, resp.to_xml, resp.to_hash) if self.debug
+    self.store(method, body, resp.to_xml, resp.to_hash) if Profitbricks::Config.store_requests
     if resp.soap_fault?
-      puts "Could not complete request (#{method}): #{resp.soap_fault.message}"
-      raise RuntimeError.new("Could not complete request (#{method}): #{resp.soap_fault.message}")
+      puts "Error during request '#{method}': #{resp.soap_fault.message}"
+      puts "------------------------------ Request XML -------------------------------"
+      puts body
+      puts "--------------------------------------------------------------------------"
+      puts "------------------------------ Response XML ------------------------------"
+      puts resp.to_xml
+      puts "--------------------------------------------------------------------------"
+      raise RuntimeError.new("Error during request '#{method}': #{resp.soap_fault.message}")
     end
     resp
   end
 
+  private 
   def self.store(method, body, xml, json)
     require 'digest/sha1'
-    hash = Digest::SHA1.hexdigest 'xml'
+    hash = Digest::SHA1.hexdigest xml
 
     unless Dir.exists?(File.expand_path("../../../spec/fixtures/#{method}", __FILE__))
       Dir.mkdir(File.expand_path("../../../spec/fixtures/#{method}", __FILE__))

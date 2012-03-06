@@ -15,6 +15,18 @@ module Profitbricks
       end
     end
 
+    def reload
+      updated = self.class.find(:id => self.id)
+      update_attributes(updated)
+    end
+
+    def update_attributes(updated)
+      self.instance_variables.each do |var|
+        self.instance_variable_set(var, updated.instance_variable_get(var))
+      end
+      true
+    end
+
     def self.has_many(model)
       klass = Profitbricks.get_class model[0..-2].camelcase
       @@associations[model] = {:type => :collection, :class => klass}
@@ -70,7 +82,7 @@ module Profitbricks
 
     def initialize_collection_association name, association, value
       self.instance_variable_set("@#{name}", [])
-      [value].flatten.each do |object|
+      [value].flatten.compact.each do |object|
         instance_variable_get("@#{name}").send(:push, association[:class].send(:new, object))
       end
     end

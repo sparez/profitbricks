@@ -1,6 +1,6 @@
 require 'profitbricks/profitbricks'
 require 'profitbricks/extensions'
-require 'profitbricks/client'
+require 'profitbricks/config'
 require 'profitbricks/model'
 require 'profitbricks/data_center'
 require 'profitbricks/server'

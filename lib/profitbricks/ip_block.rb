@@ -3,8 +3,11 @@ module Profitbricks
     attr_reader :ips
 
     def initialize(hash)
-      @ips = hash.delete(:public_ips).collect { |ip| ip[:ip] }
+      if hash[:public_ips]
+        @ips = [hash.delete(:public_ips)].flatten.compact.collect { |ip| ip[:ip] }
+      end
       super(hash)
+      @ips = [@ips] if @ips.class != Array
     end
 
     def id
@@ -34,10 +37,10 @@ module Profitbricks
       # Reserves a specific amount of public IPs which can be manually assigned to a NIC by the user.
       #
       # @param [Fixnum] Block size / amount of IPs to reserve
-      # @return [Boolean] true on success, false otherwise
+      # @return [IpBlock] The reserved IpBlock
       def reserve(amount)
         response = Profitbricks.request :reserve_public_ip_block, "<blockSize>#{amount}</blockSize>"
-        return true if response.to_hash[:reserve_public_ip_block_response][:return]
+        return PB::IpBlock.new(response.to_hash[:reserve_public_ip_block_response][:return])
       end
 
 

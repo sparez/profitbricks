@@ -3,28 +3,12 @@ require 'spec_helper'
 describe Profitbricks::Nic do
   include Savon::Spec::Macros
 
-  let(:client) do
-    Savon.configure do |config|
-      config.log = false
-    end
-    Savon::Client.new do
-        wsdl.endpoint = "https://api.profitbricks.com/1.1"
-        wsdl.document = "https://api.profitbricks.com/1.1/wsdl"
-    end
-  end
-
-  before do
-    Profitbricks::Client.new("nouser", "nopass") 
-    Profitbricks.client = client
-  end
-
   it "create a new Nic" do
     savon.expects(:create_nic).returns(:success)
     savon.expects(:get_nic).returns(:success)
     nic = Nic.create(:lan_id => 1, :ip => "192.168.0.11", :name => "Internal", :server_id => "4cb6550f-3777-4818-8f4c-51233162a980")
     nic.name.should == "Internal"
     nic.lan_id.should == 1
-    pp nic
     nic.ip.should == "192.168.0.11"
   end
 
