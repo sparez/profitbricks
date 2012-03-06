@@ -1,6 +1,7 @@
 # -*- ruby -*-
 
 require 'rubygems'
+gem 'hoe', '>= 2.1.0'
 require 'hoe'
 require "rspec/core/rake_task"
 
@@ -25,7 +26,6 @@ end
 
 task :prerelease => [:clobber, :check_manifest, :test]
 
-RSpec::Core::RakeTask.new
 
 task :default => :spec
 task :test => :spec

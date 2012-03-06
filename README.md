@@ -1,6 +1,8 @@
-# Profitbricks
+# Profitbricks [![Build Status](https://secure.travis-ci.org/dsander/profitbricks.png)](http://travis-ci.org/dsander/profitbricks)
 
 * http://github.com/dsander/profitbricks
+* http://rubydoc.info/github/dsander/profitbricks/master/frames
+
 
 ## DESCRIPTION
 A Ruby client for the ProfitBricks API.
