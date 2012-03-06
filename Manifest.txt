@@ -6,6 +6,7 @@ Gemfile.lock
 Manifest.txt
 README.md
 Rakefile
+bin/profitbricks
 examples/create_datacenter.rb
 lib/profitbricks.rb
 lib/profitbricks/config.rb
@@ -18,6 +19,7 @@ lib/profitbricks/nic.rb
 lib/profitbricks/profitbricks.rb
 lib/profitbricks/server.rb
 lib/profitbricks/storage.rb
+profitbricks.gemspec
 spec/fixtures/add_public_ip_to_nic/success.json
 spec/fixtures/add_public_ip_to_nic/success.xml
 spec/fixtures/clear_data_center/success.json
