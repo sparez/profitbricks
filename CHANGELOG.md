@@ -1,4 +1,9 @@
-=== NEXT / 2012-03-06
+=== 0.0.3 / 2012-03-06
+
+* 1 minor enhancement:
+
+  * Adding homepage
+=== 0.0.2 / 2012-03-06
 
 * 1 minor enhancement:
 

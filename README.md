@@ -1,4 +1,5 @@
 # Profitbricks
+ * https://github.com/dsander/profitbricks
 
 ## DESCRIPTION
 A Ruby client for the ProfitBricks API.
@@ -17,8 +18,8 @@ Currently only tested on MRI 1.9.3, more implementations will follow once the te
 ## Synopsis
 	require 'profitbricks'
 	Profitbricks.configure do |config|
-		username = "username"
-		password = "password"
+		config.username = "username"
+		config.password = "password"
 	end
 
 Get a list of all your Datacenters

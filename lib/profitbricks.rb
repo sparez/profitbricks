@@ -9,7 +9,7 @@ require 'profitbricks/storage'
 require 'profitbricks/ip_block'
 
 module Profitbricks
-  VERSION = '0.0.2'
+  VERSION = '0.0.3'
 end
 
 PB = Profitbricks
