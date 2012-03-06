@@ -21,7 +21,7 @@ module Profitbricks
     end
 
     def self.has_many(model)
-      klass = Profitbricks.get_class model[0..-2].camelcase
+      klass = Profitbricks.get_class model.to_s[0..-2].camelcase
       @@associations[model] = {:type => :collection, :class => klass}
       define_method(model) { instance_variable_get("@#{model}") }
     end
