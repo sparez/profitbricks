@@ -8,4 +8,8 @@ require 'profitbricks/image'
 require 'profitbricks/storage'
 require 'profitbricks/ip_block'
 
+module Profitbricks
+  VERSION = '0.0.1'
+end
+
 PB = Profitbricks

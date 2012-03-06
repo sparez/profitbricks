@@ -1,7 +1,4 @@
 module Profitbricks
-  VERSION = '0.0.1'
-
-
   # Configure the Profitbricks API client
   #
   # @see Profitbricks::Config

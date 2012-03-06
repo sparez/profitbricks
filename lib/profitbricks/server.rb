@@ -27,6 +27,7 @@ module Profitbricks
     # @return [Boolean] true on success, false otherwise
     def update(options = {})
       return false if options.empty?
+      raise ArgumentError.new(":ram and :cores are mandatory options.") unless options[:ram] or options[:core]
       raise ArgumentError.new(":ram has to be at least 256MiB and a multiple of it") if options[:ram] < 256 or (options[:ram] % 256) > 0
       raise ArgumentError.new(":os_type has to be either 'WINDOWS' or 'OTHER'") if options[:os_type] and !['WINDOWS', 'OTHER'].include? options[:os_type]
       xml = "<arg0><serverId>#{self.id}</serverId>"
