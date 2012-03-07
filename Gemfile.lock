@@ -11,7 +11,7 @@ GEM
     ffi (1.0.11)
     gyoku (0.4.4)
       builder (>= 2.1.2)
-    hoe (2.14.0)
+    hoe (2.15.0)
       rake (~> 0.8)
     hoe-bundler (1.1.0)
       hoe (>= 2.2.0)
