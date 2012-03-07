@@ -10,8 +10,7 @@ A Ruby client for the ProfitBricks API.
 BE AWARE: This software is in a very early state of development, the methods and responses will very likely change over time.
 
 ## Dependencies
-A Ruby interpreter.
-Currently only tested on MRI 1.9.3, more implementations will follow once the tests pass on TravisCI
+A Ruby interpreter (MRI 1.8.7, 1.9.2, 1.9.3 and JRuby 1.8 passing the tests).
 
 
 ## Installation
