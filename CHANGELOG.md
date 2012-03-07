@@ -1,3 +1,9 @@
+=== 0.0.5 / 2012-03-07
+
+* 1 major enhancement:
+
+  * One should require ones dependencies
+
 === 0.0.4 / 2012-03-07
 
 * 1 major enhancement:

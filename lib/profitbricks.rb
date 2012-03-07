@@ -1,3 +1,4 @@
+require 'savon'
 require 'profitbricks/profitbricks'
 require 'profitbricks/extensions'
 require 'profitbricks/config'
@@ -9,7 +10,7 @@ require 'profitbricks/storage'
 require 'profitbricks/ip_block'
 
 module Profitbricks
-  VERSION = '0.0.4'
+  VERSION = '0.0.5'
 end
 
 PB = Profitbricks
