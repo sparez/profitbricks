@@ -1,0 +1,17 @@
+{
+    "add_firewall_rules_to_load_balancer_response": {
+        "@xmlns:ns2": "http://ws.api.profitbricks.com/",
+        "return": {
+            "active": false,
+            "firewall_id": "aa5e5270-1e6d-6e3a-ba7b-0b1f2d9e2425",
+            "firewall_rules": {
+                "firewall_rule_id": "c0ccdcb3-302a-4353-836b-a31169a8df57",
+                "port_range_end": "80",
+                "port_range_start": "80",
+                "protocol": "TCP"
+            },
+            "nic_id": "5a6e677b-c0c1-93c3-38e1-7cda5eef6015",
+            "provisioning_state": "INPROCESS"
+        }
+    }
+}

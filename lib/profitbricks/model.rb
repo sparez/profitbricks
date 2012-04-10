@@ -2,7 +2,7 @@ module Profitbricks
 	class Model
     @@associations = {}
 
-    def initialize(hash = {})
+    def initialize(hash = {}, parent=nil)
       klass = self.class.to_s.underscore
       hash.keys.each do |k|
         attribute = k.to_s.sub("#{klass}_", '').to_sym
@@ -20,14 +20,14 @@ module Profitbricks
       update_attributes(updated)
     end
 
-    def self.has_many(model)
-      klass = Profitbricks.get_class model.to_s[0..-2].camelcase
+    def self.has_many(model, options = {})
+      klass = Profitbricks.get_class model.to_s[0..-2], options
       @@associations[model] = {:type => :collection, :class => klass}
       define_method(model) { instance_variable_get("@#{model}") }
     end
 
-    def self.belongs_to(model)
-      klass = Profitbricks.get_class model.to_s.camelcase
+    def self.belongs_to(model, options = {})
+      klass = Profitbricks.get_class model.to_s, options
       @@associations[model] = {:type => :belongs_to, :class => klass}
       define_method(model) { instance_variable_get("@#{model}") }
     end
@@ -44,6 +44,14 @@ module Profitbricks
     def self.get_xml_and_update_attributes(hash, attributes=[])
       hash, attributes = expand_attributes(hash, attributes, name())
       self.build_xml(hash, attributes)
+    end
+
+    def attributes
+      a = {}
+      self.instance_variables.each do |variable|
+        a[variable.to_s[1..-1].to_sym] = self.instance_variable_get(variable)
+      end
+      a
     end
 
     private
@@ -83,12 +91,12 @@ module Profitbricks
     def initialize_collection_association name, association, value
       self.instance_variable_set("@#{name}", [])
       [value].flatten.compact.each do |object|
-        instance_variable_get("@#{name}").send(:push, association[:class].send(:new, object))
+        instance_variable_get("@#{name}").send(:push, association[:class].send(:new, object, self))
       end
     end
 
     def initialize_belongs_to_association name, association, value
-      self.instance_variable_set("@#{name}", association[:class].send(:new, value))
+      self.instance_variable_set("@#{name}", association[:class].send(:new, value, self))
     end
 
     def self.expand_attributes(hash, attributes, klass=nil)

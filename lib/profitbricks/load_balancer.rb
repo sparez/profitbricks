@@ -1,10 +1,7 @@
 module Profitbricks
   class LoadBalancer < Profitbricks::Model
-    has_many :servers
-
-    def initialize(hash)
-      super(hash)
-    end
+    has_many :balanced_servers, :class_name => :server
+    belongs_to :firewall
 
     # Changes the settings of an existing virtual load balancer.
     # 

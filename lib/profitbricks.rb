@@ -9,6 +9,8 @@ require 'profitbricks/image'
 require 'profitbricks/storage'
 require 'profitbricks/ip_block'
 require 'profitbricks/load_balancer'
+require 'profitbricks/firewall'
+require 'profitbricks/rule'
 
 module Profitbricks
   VERSION = '0.0.5'

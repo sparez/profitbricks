@@ -2,7 +2,7 @@ module Profitbricks
   class IpBlock < Profitbricks::Model
     attr_reader :ips
 
-    def initialize(hash)
+    def initialize(hash, parent=nil)
       if hash[:public_ips]
         @ips = [hash.delete(:public_ips)].flatten.compact.collect { |ip| ip[:ip] }
       end

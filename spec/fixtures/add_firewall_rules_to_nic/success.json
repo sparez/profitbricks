@@ -1,0 +1,24 @@
+{
+    "add_firewall_rules_to_nic_response": {
+        "@xmlns:ns2": "http://ws.api.profitbricks.com/",
+        "return": {
+            "active": false,
+            "firewall_id": "33f4e0a5-41d9-eb57-81d1-24854ed89834",
+            "firewall_rules": [
+                {
+                    "firewall_rule_id": "77e8e8bd-5b72-b657-e97b-c010937cefdf",
+                    "protocol": "ANY",
+                    "target_ip": "10.14.186.225"
+                },
+                {
+                    "firewall_rule_id": "3580cc62-41bb-46a8-8ce8-6a19fbbe884e",
+                    "port_range_end": "80",
+                    "port_range_start": "80",
+                    "protocol": "TCP"
+                }
+            ],
+            "nic_id": "7f3a83fd-d158-5add-cb22-0cc6590f8791",
+            "provisioning_state": "INPROCESS"
+        }
+    }
+}

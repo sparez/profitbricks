@@ -2,8 +2,8 @@ module Profitbricks
   class Ip < Profitbricks::Model; end;
 
   class Nic < Profitbricks::Model
-
-    def initialize(hash)
+    belongs_to :firewall
+    def initialize(hash, parent=nil)
       super(hash)
       @ips = [@ips] if @ips.class != Array
     end

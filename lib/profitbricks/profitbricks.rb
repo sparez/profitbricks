@@ -70,8 +70,9 @@ module Profitbricks
     File.open(File.expand_path("../../../spec/fixtures/#{method}/#{hash}.json", __FILE__), 'w').write(JSON.dump(json))
   end
 
-  def self.get_class name
-    klass = name
+  def self.get_class name, options = {}
+    klass = name.camelcase
+    klass = options[:class_name].to_s.camelcase if options[:class_name]
     if Profitbricks.const_defined?(klass)
       klass = Profitbricks.const_get(klass)
     else
@@ -84,4 +85,4 @@ module Profitbricks
     end
     klass
   end
-end  
+end
