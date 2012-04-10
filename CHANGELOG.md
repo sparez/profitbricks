@@ -1,3 +1,10 @@
+=== 0.4.0 / 2012-04-11
+
+* 2 major enhancements:
+
+  * Support for firewalls
+  * Support for load balancers
+
 === 0.0.5 / 2012-03-07
 
 * 1 major enhancement:
