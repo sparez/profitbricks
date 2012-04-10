@@ -7,8 +7,6 @@
 ## DESCRIPTION
 A Ruby client for the ProfitBricks API.
 
-BE AWARE: This software is in a very early state of development, the methods and responses will very likely change over time.
-
 ## Dependencies
 A Ruby interpreter (MRI 1.8.7, 1.9.2, 1.9.3 and JRuby 1.8 passing the tests).
 
@@ -44,11 +42,9 @@ or
 
 	Server.create(:cores => 1, :ram => 256, :name => 'Test Server')
 
-Check out the examples directory for more detailed usage information.
+Check out the examples directory for more detailed usage information, or have a look at the [documentation](http://rubydoc.info/github/dsander/profitbricks/master/frames) for the class reference.
 
 ## License
-This might also change!
-
 (The MIT License)
 
 Copyright (c) 2012 Dominik Sander

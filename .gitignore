@@ -1,2 +1,5 @@
 coverage
 pkg
+.yardoc
+*.rb
+*.txt
