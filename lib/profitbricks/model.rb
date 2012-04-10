@@ -92,10 +92,14 @@ module Profitbricks
     end
 
     def self.expand_attributes(hash, attributes, klass=nil)
-      name =  hash.delete(:name)
-      hash["#{klass.to_s.underscore}_name"] = name
-      attributes.delete(:name)
-      attributes.push "#{klass.to_s.underscore}_name"
+      [:name, :algorithm].each do |a|
+        deleted =  hash.delete(a)
+        if deleted
+          hash["#{klass.to_s.underscore}_#{a.to_s}"] = deleted
+          attributes.delete(a)
+          attributes.push "#{klass.to_s.underscore}_#{a.to_s}"
+        end
+      end
       return hash, attributes
     end
 	end

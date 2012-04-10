@@ -1,0 +1,17 @@
+{
+    "register_servers_on_load_balancer_response": {
+        "@xmlns:ns2": "http://ws.api.profitbricks.com/",
+        "return": {
+            "balanced_servers": {
+                "activate": true,
+                "balanced_nic_id": "050aeccd-bc3c-416a-aa8a-da90ad6e8a2e",
+                "server_id": "206d10f2-035f-4ef2-8d24-3022653e9706",
+                "server_name": "Webserver"
+            },
+            "data_center_id": "69ab6ed3-8355-4c90-9501-6fa4b21ebfa3",
+            "data_center_version": "20",
+            "lan_id": "7",
+            "load_balancer_id": "3e3cb642-4d50-4371-980a-65959b2fa428"
+        }
+    }
+}

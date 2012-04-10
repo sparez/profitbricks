@@ -60,6 +60,7 @@ module Profitbricks
 
   def self.store(method, body, xml, json)
     require 'digest/sha1'
+    require 'json'
     hash = Digest::SHA1.hexdigest xml
 
     unless Dir.exists?(File.expand_path("../../../spec/fixtures/#{method}", __FILE__))

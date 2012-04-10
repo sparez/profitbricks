@@ -1,0 +1,10 @@
+{
+    "activate_load_balancing_on_servers_response": {
+        "@xmlns:ns2": "http://ws.api.profitbricks.com/",
+        "return": {
+            "data_center_id": "69ab6ed3-8355-4c90-9501-6fa4b21ebfa3",
+            "data_center_version": "24",
+            "request_id": "2192"
+        }
+    }
+}

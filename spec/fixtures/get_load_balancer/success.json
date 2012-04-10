@@ -1,0 +1,16 @@
+{
+    "get_load_balancer_response": {
+        "@xmlns:ns2": "http://ws.api.profitbricks.com/",
+        "return": {
+            "data_center_id": "69ab6ed3-8355-4c90-9501-6fa4b21ebfa3",
+            "data_center_version": "15",
+            "internet_access": false,
+            "ip": null,
+            "lan_id": "0",
+            "load_balancer_algorithm": "ROUND_ROBIN",
+            "load_balancer_id": "3e3cb642-4d50-4371-980a-65959b2fa428",
+            "load_balancer_name": "Test",
+            "provisioning_state": "INACTIVE"
+        }
+    }
+}
