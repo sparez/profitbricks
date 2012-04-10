@@ -54,7 +54,7 @@ module Profitbricks
       return true if response.to_hash[:deregister_servers_on_load_balancer_response][:return]
     end
 
-    # Enables the load balancer to distribute traffic to the specified servers.
+    # Enables the load balancer to distribute traffic to the specified servers.
     #
     # @option [Array<Server>] Servers to enable
     # @return [Boolean] true on success, false otherwise
@@ -116,6 +116,7 @@ module Profitbricks
       #
       # @param [Hash] options currently just :id is supported
       # @option options [String] :id The id of the load balancer to locate
+      # @return [LoadBalancer] The found LoadBalancer
       def find(options = {})
         raise "Unable to locate the LoadBalancer named '#{options[:name]}'" unless options[:id]
         response = Profitbricks.request :get_load_balancer, "<loadBalancerId>#{options[:id]}</loadBalancerId>"

@@ -64,8 +64,8 @@ module Profitbricks
       # Each rule has an identifier for later modification.
       #
       # @param [Hash] options currently just :id is supported
-      # @option options [String] :id The id of the load balancer to locate (required)
-      # @returns [Firewall] The located Firewall
+      # @option options [String] :id The id of the firewall to locate (required)
+      # @return [Firewall] The located Firewall
       def find(options = {})
         response = Profitbricks.request :get_firewall, "<firewallId>#{options[:id]}</firewallId>"
         # FIXME we cannot load the Firewall without knowing if it is belonging to a NIC or a LoadBalancer
