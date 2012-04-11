@@ -1,3 +1,10 @@
+=== 0.5.1 / 2012-04-11
+
+* 2 bug fixes:
+
+  * now stores 'false' attributes of an object correctly
+  * the Firewall class is now usable from the command line
+
 === 0.5.0 / 2012-04-11
 
 * 2 major enhancements:
