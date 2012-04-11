@@ -1,4 +1,4 @@
-# Profitbricks [![Build Status](https://secure.travis-ci.org/dsander/profitbricks.png)](http://travis-ci.org/dsander/profitbricks)
+# Profitbricks [![Build Status](https://secure.travis-ci.org/dsander/profitbricks.png?branch=master)](http://travis-ci.org/dsander/profitbricks)
 
 * http://github.com/dsander/profitbricks
 * http://rubydoc.info/github/dsander/profitbricks/master/frames
