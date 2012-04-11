@@ -11,7 +11,6 @@ module Profitbricks
         else
           initialize_getter(attribute, type_cast(hash[k]))
         end
-        
       end
     end
 
@@ -77,7 +76,7 @@ module Profitbricks
       self.class.send :define_method, name do 
         instance_variable_get("@#{name}")
       end
-      self.instance_variable_set("@#{name}", value) if value
+      self.instance_variable_set("@#{name}", value) if value != nil
     end
 
     def initialize_association name, association, value

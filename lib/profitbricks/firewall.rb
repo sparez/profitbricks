@@ -2,7 +2,7 @@ module Profitbricks
   class Firewall < Profitbricks::Model
     has_many :rules, :class_name => :firewall_rule
 
-    def initialize(hash, parent)
+    def initialize(hash, parent=nil)
       @parent = parent
       super(hash)
     end
