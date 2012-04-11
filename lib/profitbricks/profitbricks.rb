@@ -63,7 +63,7 @@ module Profitbricks
     require 'json'
     hash = Digest::SHA1.hexdigest xml
 
-    unless Dir.exists?(File.expand_path("../../../spec/fixtures/#{method}", __FILE__))
+    unless File.exist?(File.expand_path("../../../spec/fixtures/#{method}", __FILE__))
       Dir.mkdir(File.expand_path("../../../spec/fixtures/#{method}", __FILE__))
     end
     File.open(File.expand_path("../../../spec/fixtures/#{method}/#{hash}.xml", __FILE__), 'w').write(xml)

@@ -9,6 +9,7 @@ A Ruby client for the ProfitBricks API.
 
 ## Dependencies
 A Ruby interpreter (MRI 1.8.7, 1.9.2, 1.9.3 and JRuby 1.8 passing the tests).
+Examples work on Rubinius, but the tests do not pass.
 
 
 ## Installation
