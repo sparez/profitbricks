@@ -71,6 +71,7 @@ DEPENDENCIES
   hoe-git
   jruby-openssl
   json
+  rake
   rspec
   savon
   savon_spec

@@ -6,12 +6,16 @@ group :test, :development do
   gem 'rspec'
   gem 'savon_spec'
   gem 'simplecov', :require => false
-  gem 'hoe'
-  gem 'hoe-git'
-  gem 'hoe-gemspec'
-  gem 'hoe-bundler'
+  gem 'rake'
   gem 'ZenTest'
-  gem 'autotest-fsevent'
+  platforms :mri do
+    gem 'autotest-fsevent'
+    # Temporary fix till hoe works with rbx in 1.9 mode
+    gem 'hoe'
+    gem 'hoe-git'
+    gem 'hoe-gemspec'
+    gem 'hoe-bundler'
+  end
 end
 
 platforms :jruby do
