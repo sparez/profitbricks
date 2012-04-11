@@ -29,7 +29,7 @@ Get a list of all your Datacenters
 
 Create a new Datacenter
 
-	dc = DataCenter.create('Name')
+	dc = DataCenter.create(:name => 'Name')
 
 Find a Datacenter by name
 
@@ -44,6 +44,22 @@ or
 	Server.create(:cores => 1, :ram => 256, :name => 'Test Server')
 
 Check out the examples directory for more detailed usage information, or have a look at the [documentation](http://rubydoc.info/github/dsander/profitbricks/master/frames) for the class reference.
+
+## CLI
+
+To use the profitbricks binary you first have to store your username and password in environment variables
+ 	
+ 	export PROFITBRICKS_USER=yourusername
+ 	export PROFITBRICKS_PASSWORD=yourpassword
+
+The binary always takes at least two arguments. The first represents a class name (in snake- or camel-case) and the second a method name of this class.
+Get a list of all your datacenters:
+ 	
+ 	profitbricks data_center all
+
+The following arguments are coverted into a Hash and passed to the method, if you want to call instance methods you _have_ to provide the id of the Server/DataCenter, etc:
+ 	
+ 	profitbricks server update id=03h17g46-3040-d1af-bb01-9579fe0300e7 cores=2 ram=1024
 
 ## License
 (The MIT License)

@@ -1,3 +1,7 @@
 #!/usr/bin/env ruby
 
-abort "you need to write me"
+require 'profitbricks'
+require 'profitbricks/cli'
+
+cli = Profitbricks::CLI.new()
+exit cli.run(ARGV)
