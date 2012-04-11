@@ -1,3 +1,9 @@
+=== 0.4.1 / 2012-04-11
+
+* 1 bug fix:
+
+  * tests on 1.8.7 should pass again
+
 === 0.4.0 / 2012-04-11
 
 * 2 major enhancements:
