@@ -1,3 +1,10 @@
+=== 0.5.0 / 2012-04-11
+
+* 2 major enhancements:
+
+  * Added a binary profitbricks to use the API from the command line
+  * DataCenter.create now excepts a Hash
+
 === 0.4.1 / 2012-04-11
 
 * 1 bug fix:

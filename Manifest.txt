@@ -10,6 +10,7 @@ Rakefile
 bin/profitbricks
 examples/create_datacenter.rb
 lib/profitbricks.rb
+lib/profitbricks/cli.rb
 lib/profitbricks/config.rb
 lib/profitbricks/data_center.rb
 lib/profitbricks/extensions.rb
@@ -132,6 +133,7 @@ spec/fixtures/update_server/basic.json
 spec/fixtures/update_server/basic.xml
 spec/fixtures/update_storage/success.json
 spec/fixtures/update_storage/success.xml
+spec/profitbricks/cli_spec.rb
 spec/profitbricks/data_center_spec.rb
 spec/profitbricks/firewall_spec.rb
 spec/profitbricks/image_spec.rb
