@@ -75,10 +75,11 @@ module Profitbricks
       
       # Creates and saves a new, empty Virtual Data Center.
       #
-      # @param [String] Name of the Virtual Data Center (can not start with or contain (@, /, \\, |, ", '))
+      # @param [Hash] options 
+      # @option options [String] :name Name of the Virtual Data Center (can not start with or contain (@, /, \\, |, ", '))
       # @return [DataCenter] The newly created Virtual Data Center
-      def create(name)
-        response = Profitbricks.request :create_data_center, "<dataCenterName>#{name}</dataCenterName>"
+      def create(options)
+        response = Profitbricks.request :create_data_center, "<dataCenterName>#{options[:name]}</dataCenterName>"
         self.find(:id => response.to_hash[:create_data_center_response][:return][:data_center_id] )
       end
 

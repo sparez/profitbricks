@@ -13,7 +13,7 @@ end
 # * and a database server 
 #
 
-dc = DataCenter.create('Example Project')
+dc = DataCenter.create(:name => 'Example Project')
 dc.wait_for_provisioning
 
 debian = Image.find(:name => "profitbricks-debian-squeeze-EN-6.0.1a-amd64.img")

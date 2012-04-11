@@ -6,7 +6,7 @@ describe Profitbricks::DataCenter do
   it "should create a new datacenter" do
     savon.expects(:create_data_center).returns(:success)
     savon.expects(:get_data_center).returns(:create)
-    dc = DataCenter.create('Test2')
+    dc = DataCenter.create(:name => 'Test2')
     dc.name.should == 'Test2'
     dc.id.should == "b3eebede-5c78-417c-b1bc-ff5de01a0602"
     dc.version.should == 9
