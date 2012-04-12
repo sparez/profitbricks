@@ -8,9 +8,11 @@
 A Ruby client for the ProfitBricks API.
 
 ## Dependencies
-A Ruby interpreter (MRI 1.8.7, 1.9.2, 1.9.3 and JRuby 1.8 passing the tests).
-Examples work on Rubinius, but the tests do not pass.
+A Ruby interpreter (MRI 1.8.7/1.9.2/1.9.3, JRuby 1.8/1.9 and Rubinius 1.8/1.9).
 
+To get the SSL certificate verification on JRuby 1.9 to work (at least on ubuntu/debian) export the following environment variable:
+
+	export SSL_CERT_DIR=/etc/ssl/certs
 
 ## Installation
 	gem install profitbricks
