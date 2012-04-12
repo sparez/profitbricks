@@ -9,7 +9,7 @@ require "rspec/core/rake_task"
 # Hoe.plugin :inline
 # Hoe.plugin :racc
 # Hoe.plugin :rubyforge
-if defined?(RUBY_ENGINE) && RUBY_ENGINE == 'mri'
+if defined?(RUBY_ENGINE) && RUBY_ENGINE == 'ruby'
   require 'hoe'
   Hoe.plugin :git
   Hoe.plugin :gemspec

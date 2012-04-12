@@ -1,3 +1,14 @@
+=== 0.9.0 / 2012-04-12
+
+* 1 major enhancement:
+
+  * Tests are passing on rbx in 1.8 and 1.9 mode and JRuby 1.9
+
+* 2 bug fixes:
+
+  * Fix the specs for mri 1.8
+  * skip SSL certificate validation on JRuby 1.9 when SSL_CERT_DIR is not set
+
 === 0.5.1 / 2012-04-11
 
 * 2 bug fixes:
